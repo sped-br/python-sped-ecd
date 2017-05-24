@@ -28,7 +28,7 @@ class PyTest(test_command):
 
 
 setup(
-    name='python-sped-ecd',
+    name='sped-ecd',
     packages=find_packages(exclude=['contrib', 'docs', 'tests*']),
     include_package_data=True,
     package_data={
