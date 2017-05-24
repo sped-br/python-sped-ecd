@@ -6,7 +6,7 @@ install:
   - pip install pytest
   - pip install coveralls
 script:
-  - coverage run --source=sped_common setup.py test
+  - coverage run --source=sped_ecd setup.py test
 deploy:
   provider: pypi
   user: ginx
@@ -15,6 +15,6 @@ deploy:
   distributions: "sdist bdist_wheel"
   on:
     tags: true
-    repo: sped-br/sped-ecd
+    repo: sped-br/python-sped-ecd
 after_success:
   - coveralls
