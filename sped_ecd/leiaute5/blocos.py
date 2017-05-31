@@ -49,6 +49,7 @@ class BlocoK(Bloco):
     """
     registro_abertura = RegistroK001
     registro_fechamento = RegistroK990
+    bloco_obrigatorio = False
 
 
 class Bloco9(Bloco):

@@ -49,7 +49,7 @@ setup(
         'Programming Language :: Python :: 3.6',
     ],
     keywords='sped fiscal contábil contabilidade receita federal',
-    install_requires=['sped-common>=0.0.4'],
+    install_requires=['sped-common>=0.0.5'],
     tests_require=['pytest'],
     cmdclass={'test': PyTest},
 )

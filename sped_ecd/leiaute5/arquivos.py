@@ -1,7 +1,6 @@
 # -*- coding: utf-8 -*-
 
 from sped_common import arquivos
-from . import blocos
 from . import registros
 from .blocos import Bloco0
 from .blocos import BlocoI
@@ -17,7 +16,6 @@ class ArquivoDigital(arquivos.ArquivoDigital):
     registro_abertura = Registro0000
     registro_fechamento = Registro9999
     registros = registros
-    blocos = blocos
 
     def __init__(self):
         super(ArquivoDigital, self).__init__()
@@ -30,7 +28,7 @@ class ArquivoDigital(arquivos.ArquivoDigital):
     def prepare(self):
         bloco_9 = self._blocos['9'] = Bloco9()
 
-        for bloco in self._blocos.values():
+        for bloco in self.blocos:
             regs = {}
             for reg in bloco.registros:
                 if reg.REG not in regs:
@@ -48,7 +46,8 @@ class ArquivoDigital(arquivos.ArquivoDigital):
                 bloco_9.add(registro)
 
         reg_count = 2
-        for bloco in self._blocos.values():
+
+        for bloco in self.blocos:
             reg_count += len(bloco.registros)
 
         self._registro_fechamento[2] = reg_count
